@@ -7,7 +7,4 @@ class SortUtils {
         }
     }
 
-    void show2(){
-
-    }
 }
