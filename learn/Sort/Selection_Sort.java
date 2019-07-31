@@ -12,14 +12,13 @@ public class Selection_Sort {
                 }
             }
         }
-        for (int e : arr) {
-            System.out.print(e + ",");
-        }
     }
 
     public static void main(String[] args) {
         int[] a = {4, 2, 7, 5, 9, 12, 3, 8};
         Selection_Sort selection_sort = new Selection_Sort();
+        SortUtils sortUtils = new SortUtils();
         selection_sort.sort(a);
+        sortUtils.show(a);
     }
 }
