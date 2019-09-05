@@ -20,14 +20,13 @@ public class Quick_Sort {
             }
             if (i-1>start) array=q_sort(array,start,i-1);
             if (j+1<last) array=q_sort(array,j+1,last);
-            return (array);
         }
-        return null;
+        return array;
     }
 
     public static void main(String[] args) {
         int[] li = new int[]{2,7,1,4,9,5,3,1};
-        int[] after = q_sort(li,0,li.length);
+        int[] after = q_sort(li,0,li.length-1);
         for(int num : after){
             System.out.print(num+",");
         }
