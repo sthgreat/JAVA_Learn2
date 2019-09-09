@@ -1,7 +1,7 @@
 package Sort;
 
 public class Quick_Sort {
-    public static int[] q_sort(int[] array, int start, int last) {
+    public int[] q_sort(int[] array, int start, int last) {
         int i = start;
         int j = last;
         int num = array[start];
@@ -26,7 +26,8 @@ public class Quick_Sort {
 
     public static void main(String[] args) {
         int[] li = new int[]{2,7,1,4,9,5,3,1};
-        int[] after = q_sort(li,0,li.length-1);
+        Quick_Sort quick_sort = new Quick_Sort();
+        int[] after = quick_sort.q_sort(li,0,li.length-1);
         for(int num : after){
             System.out.print(num+",");
         }

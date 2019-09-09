@@ -1,7 +1,7 @@
 package Sort;
 
 public class Selection_Sort {
-    private void sort(int[] arr) {
+    public void sort(int[] arr) {
         int temp = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
