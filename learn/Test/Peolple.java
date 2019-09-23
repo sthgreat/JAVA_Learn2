@@ -1,27 +1,20 @@
 package Test;
 
 class People implements Runnable{
-    private volatile ticket ticket;
+    private ticket t;
 
-    public People(Test.ticket ticket) {
-        this.ticket = ticket;
+    public People(ticket t) {
+        this.t = t;
     }
-
 
     @Override
     public void run() {
-//        for(int i =50;i>=0;i--){
         while (true){
-            if(ticket.getStore()<=0){
+            if(t.get()<=0){
                 break;
             }
-            this.ticket.buy();
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            t.set();
+            System.out.print(Thread.currentThread().getName()+"还剩"+t.get()+"\n");
         }
-//        }
     }
 }

@@ -1,20 +1,18 @@
 package Test;
 
 public class ticket{
-    private int store = 100;
+    ThreadLocal<Integer> t = new ThreadLocal<Integer>(){
+        @Override
+        protected Integer initialValue() {
+            return 100;
+        }
+    };
 
-    public int getStore() {
-        return store;
+    public Integer get(){
+        return t.get();
     }
 
-    public void setStore(int store) {
-        this.store = store;
-    }
-
-    public synchronized void buy() {
-            if(store>=1){
-                store -= 1;
-                System.out.print(Thread.currentThread().getName() + "拿到了票！还剩" + store + "张" + "\n");
-            }
+    public void set(){
+        t.set(t.get() - 1);
     }
 }
