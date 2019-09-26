@@ -21,7 +21,7 @@ public class consumer_Productor{
 
     public void consume() throws InterruptedException {
         synchronized (list){
-            while(list.size()==0){
+            while(list.size()==0){ //此处要用while，用if会跳出，逃过检查
                 System.out.println("仓库已无剩余库存，"+Thread.currentThread().getName()+"需要等待");
                 list.wait();
             }
