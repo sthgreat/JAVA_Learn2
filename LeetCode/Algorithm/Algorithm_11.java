@@ -4,18 +4,16 @@ public class Algorithm_11 {
     class Solution {
         public int maxArea(int[] height) {
             int max = 0;
-            for(int i = 0;i<height.length;i++){
-                for(int j = 0;j<height.length;j++){
-                    if(i == j){
-                        continue;
-                    }
-                    int area = 0;
-                    if(height[i]<height[j]){
-                        area = height[i]*(Math.abs(i-j));
-                    }else{
-                        area = height[j]*(Math.abs(i-j));
-                    }
-                    max = (max>area)?max:area;
+            int i =0;
+            int j = height.length - 1;
+            while(i<j){
+                int h = height[i]>height[j]?height[j]:height[i];
+                int area = (h*(Math.abs(i-j)));
+                max = max>area? max: area;
+                if(height[i]<height[j]){
+                    i++;
+                }else{
+                    j--;
                 }
             }
             return max;
