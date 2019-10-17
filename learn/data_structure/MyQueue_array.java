@@ -48,16 +48,14 @@ public class MyQueue_array {
     }
 
     public void show(){ //输出队列内容
+        int count = 0;
         int flag = this.start;
-        while(flag!=this.end){
+        while(count!=this.size){
             if(flag == array.length){
                 flag = 0;
-                System.out.print(array[flag].toString()+" ");
-                flag ++;
-            }else {
-                System.out.print(array[flag].toString()+" ");
-                flag ++;
             }
+            System.out.print(array[flag++] + " ");
+            count++;
         }
     }
 
@@ -67,6 +65,11 @@ public class MyQueue_array {
         myQueue_array.add(2);
         myQueue_array.add(3);
         myQueue_array.get();
+        myQueue_array.add(4);
+        myQueue_array.get();
+        myQueue_array.add(5);
+        myQueue_array.get();
+        myQueue_array.add(6);
         myQueue_array.show();
     }
 }
