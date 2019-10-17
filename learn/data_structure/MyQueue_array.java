@@ -47,7 +47,7 @@ public class MyQueue_array {
         return result;
     }
 
-    public void show(){ //输出队列内容
+    public void show(){ //输出队列内容，从start开始，使用计数器来判断输出是否到达末尾
         int count = 0;
         int flag = this.start;
         while(count!=this.size){
