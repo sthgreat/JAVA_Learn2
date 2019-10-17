@@ -67,7 +67,6 @@ public class MyQueue_array {
         myQueue_array.add(2);
         myQueue_array.add(3);
         myQueue_array.get();
-        myQueue_array.add(5);
         myQueue_array.show();
     }
 }
