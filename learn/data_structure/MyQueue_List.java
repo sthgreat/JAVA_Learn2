@@ -1,5 +1,7 @@
 package data_structure;
 
+import java.util.LinkedList;
+
 public class MyQueue_List { //暂时先构建单向链表
     private my_Node head;
     private my_Node pin;
