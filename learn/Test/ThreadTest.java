@@ -1,6 +1,7 @@
 package Test;
 
 public class ThreadTest {
+    ThreadLocal th = new ThreadLocal();
 
     public static void main(String[] args){
         ticket t = new ticket();

@@ -2,8 +2,8 @@ package Test;
 
 public class demo_chushihua {
     public static void main(String[] args){
-        son f = new son();
-        son f2 = new son();
+//        father.print();
+        son s = new son();
     }
 }
 
@@ -18,6 +18,10 @@ class father{
 
     {
         System.out.println("父类代码块");
+    }
+
+    public static void print(){
+        System.out.print("父类静态方法");
     }
 
     public father(){
@@ -42,5 +46,9 @@ class son extends father{
     public son(){
         System.out.println("子类构造方法");
         System.out.print(b);
+    }
+
+    public static void print(){
+        System.out.print("子类静态方法（重写）");
     }
 }
