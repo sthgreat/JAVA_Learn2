@@ -3,6 +3,8 @@ package DesignMod.Proxy.DongTai;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.net.Socket;
+import java.nio.channels.SocketChannel;
 
 public class ProxyFactory {
     private Object targetObject;//目标对象
