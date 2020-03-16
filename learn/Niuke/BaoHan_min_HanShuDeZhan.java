@@ -1,5 +1,6 @@
 package Niuke;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class BaoHan_min_HanShuDeZhan {
