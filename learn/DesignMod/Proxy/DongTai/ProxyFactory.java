@@ -22,7 +22,6 @@ public class ProxyFactory {
         ClassLoader classLoader = targetObject.getClass().getClassLoader();
         //获取当前类型所实现的所有接口类型
         Class[] interfaces = targetObject.getClass().getInterfaces();
-
         InvocationHandler invocationHandler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
