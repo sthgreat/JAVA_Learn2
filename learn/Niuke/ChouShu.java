@@ -2,6 +2,7 @@ package Niuke;
 
 /***
  * 丑数
+ * 从小到大暴力穷举
  */
 
 public class ChouShu {
@@ -22,7 +23,7 @@ public class ChouShu {
     }
 
     int min(int a, int b, int c){
-        int temp = a < b ? a : b;
-        return temp = temp < c ? temp : c;
+        int temp = Math.min(a, b);
+        return temp = Math.min(temp, c);
     }
 }
