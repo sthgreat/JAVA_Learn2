@@ -1,9 +1,6 @@
 package Niuke;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
@@ -14,11 +11,11 @@ public class Test implements Runnable{
     private Condition c = lock.newCondition();
 
     public static void main(String[] args) throws InterruptedException {
-        ArrayList<Integer> a = new ArrayList<>();
+        LinkedList<Integer> a = new LinkedList<>();
         a.add(1);
-        a.add(null);
         a.add(2);
-        System.out.println(a.toString());
+        System.out.println(a.pollLast());
+        System.out.println(a.size());
     }
 
     @Override
