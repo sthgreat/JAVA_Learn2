@@ -11,8 +11,8 @@ public class Test implements Runnable{
     private Condition c = lock.newCondition();
 
     public static void main(String[] args) throws InterruptedException {
-        ttt t = new ttt();
-        t.k = Math.
+       HashMap h = new HashMap();
+       h.remove(1);
     }
 
 
