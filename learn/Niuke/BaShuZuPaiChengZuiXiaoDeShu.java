@@ -3,6 +3,10 @@ package Niuke;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/***
+ *  把数组排成最小的数
+ */
+
 public class BaShuZuPaiChengZuiXiaoDeShu {
     private boolean flag = true;
     private Long min;
@@ -15,7 +19,7 @@ public class BaShuZuPaiChengZuiXiaoDeShu {
         ArrayList<Long> numArray = new ArrayList<>();
         //Long min = 1L;
         for(int i = 0; i<numbers.length; i++){
-            Long k = Long.valueOf(numbers[i]);
+            Long k = (long) numbers[i];
             numQueue.add(k);
         }
 

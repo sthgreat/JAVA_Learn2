@@ -11,12 +11,10 @@ public class Test implements Runnable{
     private Condition c = lock.newCondition();
 
     public static void main(String[] args) throws InterruptedException {
-        LinkedList<Integer> a = new LinkedList<>();
-        a.add(1);
-        a.add(2);
-        System.out.println(a.pollLast());
-        System.out.println(a.size());
+        ttt t = new ttt();
+        t.k = Math.
     }
+
 
     @Override
     public void run() {
@@ -34,4 +32,8 @@ public class Test implements Runnable{
             }
         }
     }
+}
+
+class ttt{
+    int k;
 }
