@@ -19,7 +19,7 @@ public class PingHengErChaShu {
         return IsBalanced_Solution(root.left) && IsBalanced_Solution(root.right);
     }
 
-    int count(TreeNode root, int c){
+    int count(TreeNode root, int c){//查找树的深度
         if(root == null){
             return c;
         }
