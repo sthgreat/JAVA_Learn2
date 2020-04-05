@@ -4,14 +4,13 @@ public class QuickSort1 {
 
     public static void main(String[] args){
         int[] a = new int[]{1,1,0,1,1};
-        QuickSort1 q= new QuickSort1();
-        int[] sort = q.sort(a, 0, a.length - 1);
+        int[] sort = QuickSort1.sort(a, 0, a.length - 1);
         for(int num : sort){
             System.out.print(num+",");
         }
     }
 
-    public int[] sort(int[] arr, int start, int end){
+    public static int[] sort(int[] arr, int start, int end){
         int temp = arr[start];
         int i = start;
         int j = end;
@@ -38,7 +37,7 @@ public class QuickSort1 {
         return arr;
     }
 
-    private void swap(int[] arr, int p1, int p2){
+    private static void swap(int[] arr, int p1, int p2){
         int temp = arr[p1];
         arr[p1] = arr[p2];
         arr[p2] = temp;
