@@ -1,21 +1,20 @@
-package Base;
+package Niuke;
 
 import java.util.ArrayList;
-public class Test {
-    public static void main(String[] args){
-        Test t = new Test();
-        int[] a = new int[]{1,2,4,7,11,16};
 
-        ArrayList<Integer> integers = t.FindNumbersWithSum(a, 17);
-        System.out.println(integers.toString());
-    }
-
+/***
+ * 1. 暴力求解
+ * 2. 使用二分查找在数组中找到最接近sum/2的值，
+ *      通过向左右扩散，找到最符合的值（辅以部分剪枝代码）
+ *
+ */
+public class 和为S的两个数字 {
     public ArrayList<Integer> FindNumbersWithSum(int [] array,int sum) {
         int target = sum / 2;
         int start = 0;
         int end = array.length - 1;
         if(array.length < 2){
-            return null;
+            return new ArrayList<Integer>();
         }
 
         while(start < end){
@@ -47,6 +46,9 @@ public class Test {
                     }
                 }
             }
+        }
+        if(array[head] + array[tail] != sum){
+            return result;
         }
         result.add(array[head]);
         result.add(array[tail]);
