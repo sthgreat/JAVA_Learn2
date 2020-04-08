@@ -1,14 +1,12 @@
-package Base;
+package Niuke;
 
-public class Test {
-    public static void main(String[] args){
-        Test t = new Test();
-        System.out.println(t.LeftRotateString("abcXYZdef", 0));
-    }
-
+/***
+ * 主要是要注意是循环旋转，需要对n做一定的处理
+ */
+public class 左旋转字符串 {
     public String LeftRotateString(String str,int n) {
         int len = str.length();
-        if(n%len == 0){
+        if(len == 0 || n%len == 0){
             return str;
         }
         n = n % len;
