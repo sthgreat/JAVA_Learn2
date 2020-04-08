@@ -1,23 +1,21 @@
 package Base;
 
+import java.util.*;
+
 public class Test {
     public static void main(String[] args){
-        Test t = new Test();
-        System.out.println(t.LeftRotateString("abcXYZdef", 0));
+        Test t= new Test();
+        System.out.println(t.ReverseSentence("student. a am I"));
     }
 
-    public String LeftRotateString(String str,int n) {
-        int len = str.length();
-        if(n%len == 0){
+    public String ReverseSentence(String str) {
+        if(str.length()==0){
             return str;
         }
-        n = n % len;
+        String[] line = str.split(" ");
         StringBuilder sb = new StringBuilder();
-        for(int i = n;i<str.length();i++){
-            sb.append(str.charAt(i));
-        }
-        for(int i = 0;i<n;i++){
-            sb.append(str.charAt(i));
+        for(int i = line.length - 1;i>=0;i--){
+            sb.append(line[i]).append(" ");
         }
         return sb.toString();
     }
