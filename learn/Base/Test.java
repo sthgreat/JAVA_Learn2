@@ -5,15 +5,11 @@ import java.util.ArrayList;
 public class Test {
     c[] a;
     public static void main(String[] args){
-        Test t = new Test();
-        c c1 = new c(1);
-        c c2 = new c(2);
-        t.a = new c[]{c1, c2};
-        System.out.println(t.a[0].toString());
-        System.out.println(t.a[1].toString());
-        t.swap();
-        System.out.println(t.a[0].toString());
-        System.out.println(t.a[1].toString());
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(1);
+        arr.add(2);
+        arr.remove(0);
+        System.out.println(arr.toString());
     }
 
     public void swap(){
