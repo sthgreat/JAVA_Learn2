@@ -12,20 +12,21 @@ import java.util.HashMap;
  */
 public class Tang {
     NodeN[][] nodeArray;
-    int totalCount;
-    int lastLayCount;
-    int totalLayer;
-    NodeN[][] finalResult;
+    int totalCount; //总点数
+    int lastLayCount; //最后一层的点数
+    int totalLayer; //总层数
+    NodeN[][] finalResult; //要输出的结果
     int[] nodeCountByLayer; //记录每一层有多少点
-    int TypeCount;
-    int minCount = 0;
+    int TypeCount; //一共穷举了多少种情况
+    int minCount = 0; //最小交点数
+    int flag = 0; //标记初始化情况
 
     public static void main(String[] args) throws IOException {
         Tang t = new Tang();
         t.readFromFile("E:\\example.txt");
         t.perm(1, 0, t.nodeCountByLayer[0] - 1);
         System.out.println(t.TypeCount);
-        t.writeToFile("E:\\result.txt");
+        t.writeToFile("E:\\result2.txt");
     }
 
     public void writeToFile(String saveFile) throws IOException {
@@ -49,7 +50,12 @@ public class Tang {
         writer.close();
     }
 
-
+    /**
+     *
+     * @param layer 当前的层数
+     * @param start 头参数
+     * @param end 尾参数
+     */
     public void perm(int layer, int start, int end){ //全排序
         if(start == end){
             if(layer == totalLayer){//排到了底层
@@ -89,10 +95,16 @@ public class Tang {
             }
             pointCount += culculate(lineArray);
         }
-        if(minCount == 0){//第一次
+        if(flag == 0){
             minCount = pointCount;
             finalResult = CopyeOf(nodeArray);
-        }else{
+            flag++;
+        }
+//        if(minCount == 0){//第一次
+//            minCount = pointCount;
+//            finalResult = CopyeOf(nodeArray);
+//        }
+        else{
             if(minCount > pointCount){
                 finalResult = CopyeOf(nodeArray); //记录当前情况
                 minCount = pointCount;
