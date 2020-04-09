@@ -4,12 +4,10 @@ import java.util.*;
 
 public class test2 {
     public static void main(String[] args){
-        test2 t = new test2();
-        ArrayList<ArrayList<Integer>> arrayLists = t.FindContinuousSequence(3);
-        for(ArrayList<Integer> arr : arrayLists){
-            System.out.println(arr.toString());
+        int[] a = new int[5];
+        for(int i : a){
+            System.out.println(i);
         }
-
     }
 
     public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
