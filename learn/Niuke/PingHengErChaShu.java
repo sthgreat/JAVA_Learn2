@@ -1,5 +1,8 @@
 package Niuke;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 /***
  * 判断平衡二叉树
  * 递归判断它的左右子树是否都是二叉树
@@ -15,7 +18,6 @@ public class PingHengErChaShu {
         if(Math.abs(leftCount-rightCount) > 1){
             return false;
         }
-
         return IsBalanced_Solution(root.left) && IsBalanced_Solution(root.right);
     }
 
