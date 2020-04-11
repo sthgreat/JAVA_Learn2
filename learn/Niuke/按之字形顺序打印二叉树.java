@@ -15,15 +15,18 @@ public class TreeNode {
 
 }
 */
-public class test2 {
-    public static void main(String[] args){
-        ArrayList<ArrayList<Integer>> print = Print(null);
-//        System.out.print(print.to);
-    }
 
-    public static ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
+/***
+ * 与从上向下打印二叉树思想相同，使用一个队列记录一层的所有点，
+ * 根据flag值判断数值应该从右往左添加还是从左往右添加
+ */
+public class 按之字形顺序打印二叉树 {
+    public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         LinkedList<TreeNode> pointList = new LinkedList<>();
+        if(pRoot==null){
+            return list;
+        }
         boolean isOdd = true;
         pointList.add(pRoot);
         while(!pointList.isEmpty()){
