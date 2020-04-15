@@ -1,17 +1,14 @@
-package Base;
+package LeetCode;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class Test {
+/***
+ * 在排列中使用set记录当前轮次已经排在第一位的数，以此去重
+ */
+class Solution {
     private List<List<Integer>> result;
-
-    public static void main(String[] args){
-        Test t = new Test();
-        List<List<Integer>> lists = t.permuteUnique(new int[]{1, 1, 2});
-        System.out.println(lists);
-    }
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         result = new ArrayList<>();
@@ -25,10 +22,10 @@ public class Test {
         }else{
             HashSet<Integer> set = new HashSet<>();
             for(int i = start;i<=end;i++){
-                if(set.contains(i)){
+                if(set.contains(nums[i])){
                     continue;
                 }
-                set.add(i);
+                set.add(nums[i]);
                 swap(nums, i, start);
                 perm(nums, start+1,end);
                 swap(nums, i, start);
