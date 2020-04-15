@@ -2,7 +2,7 @@ package LeetCode;
 
 public class 旋转图像_48 {
     public void rotate(int[][] matrix) {
-        int n = matrix.length;a
+        int n = matrix.length;
 
         // transpose matrix
         for (int i = 0; i < n; i++) {
