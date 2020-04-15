@@ -7,7 +7,7 @@ import java.util.List;
 /***
  * 在排列中使用set记录当前轮次已经排在第一位的数，以此去重
  */
-class Solution {
+public class 全排列II_47 {
     private List<List<Integer>> result;
 
     public List<List<Integer>> permuteUnique(int[] nums) {
