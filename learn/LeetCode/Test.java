@@ -1,21 +1,15 @@
 package LeetCode;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+
 public class Test {
     public static void main(String[] args){
-        int[][] matrix = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = i; j < matrix.length; j++) {
-                int tmp = matrix[j][i];
-                matrix[j][i] = matrix[i][j];
-                matrix[i][j] = tmp;
-            }
-        }
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = i; j < matrix.length; j++) {
-                System.out.println(matrix[i][j]);
-            }
-        }
+        HashMap<String, String> map = new HashMap<String, String>();
+        String s = map.get("1");
+        System.out.println(s);
+        Collection<String> values = map.values();
+        new ArrayList<>();
     }
 }
