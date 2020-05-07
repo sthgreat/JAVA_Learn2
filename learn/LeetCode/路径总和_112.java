@@ -15,6 +15,7 @@ package LeetCode;
  */
 public class 路径总和_112 {
     private static int s;
+
     public boolean hasPathSum(TreeNode root, int sum) {
         s = 0;
         return findPath(root, sum, s);
