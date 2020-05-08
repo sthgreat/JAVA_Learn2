@@ -29,6 +29,7 @@ import java.util.LinkedList;
  * 层序遍历的思想，只不过在每一层遍历节点的同时把同一层的后续节点作为next节点
  */
 public class 填充每个节点的下一个右侧节点指针_116 {
+
     public Node connect(Node root) {
         LinkedList<Node> record = new LinkedList<>();
         if(root!=null){
