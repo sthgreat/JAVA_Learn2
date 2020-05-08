@@ -6,9 +6,17 @@ import java.util.List;
 public class test {
     static ArrayList<String> ans;
     public static void main(String[] args){
-        String s = "0000";
-        test t = new test();
-        System.out.println(t.restoreIpAddresses(s));
+        Integer a = 12334;
+        Integer b = 23341;
+        test.swap(a, b);
+        System.out.println(a + " " + b);
+    }
+
+    public static void swap(Integer a, Integer b){
+        Integer temp = a;
+        a = b;
+        b = temp;
+
     }
 
     public List<String> restoreIpAddresses(String s) {
