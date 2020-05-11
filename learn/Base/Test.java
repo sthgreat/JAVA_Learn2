@@ -1,50 +1,71 @@
 package Base;
 
 import java.util.*;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class Test {
-    private List<List<Integer>> result;
+    private final LinkedList<Integer> a = new LinkedList<>();
+
+    private final LinkedList<Integer> b = new LinkedList<>();
 
     public static void main(String[] args){
         Test t = new Test();
-        List<List<Integer>> lists = t.permuteUnique(new int[]{1, 1, 2});
-        System.out.println(lists);
+        Thread a = new Thread(new TaskA(t));
+        Thread b = new Thread(new TaskB(t));
+        a.start();
+        b.start();
     }
 
-    public List<List<Integer>> permuteUnique(int[] nums) {
-        result = new ArrayList<>();
-        perm(nums,0,nums.length - 1);
-        return result;
-    }
-
-    void perm(int[] nums, int start, int end){
-        if(start == end){
-            record(nums);
-        }else{
-            HashSet<Integer> set = new HashSet<>();
-            for(int i = start;i<=end;i++){
-                if(set.contains(i)){
-                    continue;
-                }
-                set.add(i);
-                swap(nums, i, start);
-                perm(nums, start+1,end);
-                swap(nums, i, start);
+    public void lockA() {
+        synchronized (this.a){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            System.out.println("锁了A！");
         }
     }
 
-    void record(int[] nums){
-        List<Integer> a = new ArrayList<>();
-        for(int i =0;i<nums.length;i++){
-            a.add(nums[i]);
+    public void lockB(){
+        synchronized (this.b){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("锁了B！");
         }
-        result.add(a);
     }
 
-    void swap(int[] n, int p1, int p2){
-        int temp = n[p1];
-        n[p1] = n[p2];
-        n[p2] = temp;
+}
+
+class TaskA implements Runnable{
+    public Test test;
+
+    public TaskA(Test test) {
+        this.test = test;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0;i<=5;i++){
+            test.lockA();
+        }
+    }
+}
+
+class TaskB implements Runnable{
+    public Test test;
+
+    public TaskB(Test test) {
+        this.test = test;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0;i<=5;i++){
+            test.lockB();
+        }
     }
 }

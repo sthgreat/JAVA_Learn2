@@ -9,7 +9,7 @@ public class test {
         Integer a = 12334;
         Integer b = 23341;
         test.swap(a, b);
-        System.out.println(a + " " + b);
+        System.out.println(new Double(Math.pow(2,2)).intValue());
     }
 
     public static void swap(Integer a, Integer b){
