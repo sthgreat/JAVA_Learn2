@@ -2,12 +2,10 @@ package LeetCode;
 
 import java.util.*;
 
-public class test {
-    public static void main(String[] args){
-        test t = new test();
-        List<List<String>> aab = t.partition("bb");
-        System.out.println(aab);
-    }
+/***
+ * 效率不高，建议用字符串指针来代替切割字符串
+ */
+public class 分割回文串_131 {
 
     public List<List<String>> partition(String s) {
         List<List<String>> ans = new LinkedList<>();
