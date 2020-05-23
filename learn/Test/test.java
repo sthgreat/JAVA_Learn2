@@ -1,6 +1,9 @@
 package Test;
 
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 public class test {
     int count = 0;
     int result = 0;
@@ -9,8 +12,9 @@ public class test {
     }
 
     public static void main(String[] args){
-        Integer i = 9999;
-        add(i);
-        System.out.println(i);
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(null, 1);
+        System.out.println(map.get(null));
     }
 }
