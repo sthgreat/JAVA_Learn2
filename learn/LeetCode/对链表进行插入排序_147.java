@@ -1,9 +1,5 @@
 package LeetCode;
 
-import LeetCode.ListNode;
-
-import java.util.List;
-
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -12,20 +8,11 @@ import java.util.List;
  *     ListNode(int x) { val = x; }
  * }
  */
-public class test {
-    public static void main(String[] args){
-        test t = new test();
-        ListNode head = new ListNode(4);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(1);
-        head.next.next.next = new ListNode(3);
-        t.insertionSortList(head);
-        while(head != null){
-            System.out.println(head.val);
-            head = head.next;
-        }
-    }
 
+/***
+ *
+ */
+public class 对链表进行插入排序_147 {
     public ListNode insertionSortList(ListNode head) {
         ListNode ans = null;
         while(head != null){
@@ -36,6 +23,7 @@ public class test {
             }else{//非首节点
                 ListNode after = ans;
                 ListNode before = null;
+                boolean flag = false;
                 while(after!=null){
                     if(after.val > head.val){
                         if(before == null){//应该放在首节点
@@ -50,7 +38,7 @@ public class test {
                             head.next = after;
                             head = headNext;
                         }
-
+                        flag = true;
                         break;
                     }else{
                         before = after;
@@ -58,13 +46,13 @@ public class test {
                     }
                 }
                 //走到这说明要加在末尾
-                before.next = head;
-                head = head.next;
-                before.next.next = null;
+                if(flag == false){
+                    before.next = head;
+                    head = head.next;
+                    before.next.next = null;
+                }
             }
-            System.out.println(ans.val);
         }
-
         return ans;
     }
 }

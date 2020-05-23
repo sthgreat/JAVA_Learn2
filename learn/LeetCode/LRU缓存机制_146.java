@@ -2,6 +2,9 @@ package LeetCode;
 
 import java.util.*;
 
+/***
+ * 利用linkedhashmap实现缓存机制
+ */
 public class LRU缓存机制_146 extends LinkedHashMap<Integer, Integer>{
     private int capacity;
 
