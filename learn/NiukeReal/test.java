@@ -1,7 +1,11 @@
 package NiukeReal;
 
+import java.util.Scanner;
+
 public class test {
     public static void main(String[] args){
-        StringBuilder stringBuilder = new StringBuilder();
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        System.out.println(s);
     }
 }
