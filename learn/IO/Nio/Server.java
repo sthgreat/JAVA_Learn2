@@ -48,7 +48,6 @@ public class Server {
                         SelectionKey key = selectionKeys.next();
                         selectionKeys.remove();
                         if(key.isAcceptable()){
-                            accept(key);
                         }
                     }
                 }
