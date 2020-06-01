@@ -5,6 +5,7 @@ package LeetCode;
  */
 
 import java.util.HashSet;
+import java.util.LinkedList;
 
 /**
  * Definition for singly-linked list.
