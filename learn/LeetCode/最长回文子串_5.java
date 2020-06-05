@@ -1,11 +1,13 @@
-package NiukeReal;
+package LeetCode;
 
-public class test {
-    public static void main(String[] args){
-        test t = new test();
-        System.out.println(t.longestPalindrome("abbac"));
-    }
+/***
+ * 利用动态规划求解
+ */
+public class 最长回文子串_5 {
     public String longestPalindrome(String s) {
+        if(s.length() == 0){
+            return "";
+        }
         boolean[][] record = new boolean[s.length()][s.length()];
         int start = 0;
         int size = 1;
