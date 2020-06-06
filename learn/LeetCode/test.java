@@ -35,12 +35,10 @@ public class test {
         }
         list.add(s.substring(start).trim());
         StringBuilder sb = new StringBuilder();
-        while(!list.isEmpty()){
+        int size = list.size();
+        for(int i = size ;i>0;i--){
             sb.append(list.removeLast()).append(" ");
         }
-//        for(int i = 0;i<list.size();i++){
-//            sb.append(list.removeLast()).append(" ");
-//        }
         return sb.toString().trim();
     }
 }
