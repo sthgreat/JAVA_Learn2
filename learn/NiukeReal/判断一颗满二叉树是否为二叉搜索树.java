@@ -1,7 +1,7 @@
 package NiukeReal;
 import java.util.*;
 
-public class Main{
+public class 判断一颗满二叉树是否为二叉搜索树 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String n = sc.nextLine();
