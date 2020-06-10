@@ -18,14 +18,14 @@ public class Quick_Sort {
                 array[i] = array[j];
                 array[j] = temp;
             }
-            if (i-1>start) array=q_sort(array,start,i-1);
-            if (j+1<last) array=q_sort(array,j+1,last);
         }
+        if (i-1>start) array=q_sort(array,start,i-1);
+        if (j+1<last) array=q_sort(array,j+1,last);
         return array;
     }
 
     public static void main(String[] args) {
-        int[] li = new int[]{2,7,1,4,9,5,3,1};
+        int[] li = new int[]{1,1,2,2,1,1,2,1};
         Quick_Sort quick_sort = new Quick_Sort();
         int[] after = quick_sort.q_sort(li,0,li.length-1);
         for(int num : after){

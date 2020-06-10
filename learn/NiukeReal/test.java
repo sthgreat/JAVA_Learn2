@@ -5,7 +5,6 @@ import java.util.*;
 public class test {
 
     public static void main(String[] args) {
-
         List<String> lines = new ArrayList<>();
         Scanner scanner = null;
         ListNode ans = null;
