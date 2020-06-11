@@ -18,9 +18,11 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class test {
     public static void main(String[] args){
-        test t = new test();
-        String ss = t.reverseWords("the sky is blue");
-        System.out.println(ss);
+        String[] s = ". .".split("\\.");
+        for(String ss : s){
+            System.out.println(s.length);
+            System.out.println(ss);
+        }
 
     }
     public String reverseWords(String s) {
