@@ -1,12 +1,20 @@
 package NiukeReal;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class iii {
     public static void main(String[] args){
-        int n = 9;
-        double s = Double.parseDouble(String.valueOf(n));
-        System.out.println(String.format("%.2f",s/2).toString());
         Scanner sc = new Scanner(System.in);
+        LinkedList<String> list = new LinkedList<>();
+        String num = sc.nextLine();
+        while(sc.hasNextLine()){
+            String s = sc.nextLine();
+            list.add(s);
+        }
+        System.out.println(Integer.valueOf(num));
+        for(String sss : list){
+            System.out.println(sss);
+        }
     }
 }
