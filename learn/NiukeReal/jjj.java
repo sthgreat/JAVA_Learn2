@@ -1,9 +1,24 @@
 package NiukeReal;
 
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class jjj {
     public static void main(String[] args){
-        Solution s= new Solution();
-        System.out.println(s.numSquares(13));
+        PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                String num1 = String.valueOf(o1);
+                String num2 = String.valueOf(o2);
+                return num2.compareTo(num1);
+            }
+        });
+        queue.add(12);
+        queue.add(13);
+        for(int i = queue.size() - 1;i>=0;i--){
+            System.out.println(queue.poll());
+        }
     }
 }
 
