@@ -18,8 +18,11 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class test {
     public static void main(String[] args){
-        System.out.println();
-
+        int k = 1;
+        for(int i = 1;i<32;i++){
+            k *= 2;
+        }
+        System.out.println(k);
     }
     public String reverseWords(String s) {
         int start = 0;
