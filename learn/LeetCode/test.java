@@ -18,11 +18,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class test {
     public static void main(String[] args){
-        int k = 1;
-        for(int i = 1;i<32;i++){
-            k *= 2;
-        }
-        System.out.println(k);
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("1", 1);
+        map.put("2", 2);
     }
     public String reverseWords(String s) {
         int start = 0;

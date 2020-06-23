@@ -7,9 +7,12 @@ public class iii {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         LinkedList<String> list = new LinkedList<>();
-//        String num = sc.nextLine();
+        String num = sc.nextLine();
         while(sc.hasNextLine()){
             String s = sc.nextLine();
+            if(s.equals("")){
+                break;
+            }
             list.add(s);
         }
 //        System.out.println(Integer.valueOf(num));
