@@ -1,7 +1,7 @@
 package LeetCode;
 
 /***
- * 动态代理
+ * 动态代理，dp值表示当前手头上的钱
  */
 public class 最佳卖卖股票的时机含冷冻期_309 {
     public int maxProfit(int[] prices) {
