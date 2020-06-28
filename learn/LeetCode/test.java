@@ -2,10 +2,7 @@ package LeetCode;
 
 import LeetCode.ListNode;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -18,9 +15,10 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class test {
     public static void main(String[] args){
-        HashMap<String, Integer> map = new HashMap<>();
-        map.put("1", 1);
-        map.put("2", 2);
+        char[] s = new char[10];
+        s[0] = 's';
+        s[1] = '2';
+        System.out.println(String.valueOf(s).trim());
     }
     public String reverseWords(String s) {
         int start = 0;
