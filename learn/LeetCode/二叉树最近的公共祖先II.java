@@ -31,9 +31,10 @@ public class 二叉树最近的公共祖先II {
         }else{
             if(left != null){
                 return left;
-            }else {
+            }else if(right != null){
                 return right;
             }
         }
+        return null;
     }
 }
