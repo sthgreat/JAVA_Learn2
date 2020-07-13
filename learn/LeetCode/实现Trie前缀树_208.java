@@ -1,5 +1,7 @@
 package LeetCode;
 
+import java.util.Stack;
+
 class Trie {
     private TrieNode head;
     /** Initialize your data structure here. */
