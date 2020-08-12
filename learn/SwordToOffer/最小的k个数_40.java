@@ -1,12 +1,14 @@
 package SwordToOffer;
 
+
+/***
+ * 使用快排的思想实现
+ */
 public class 最小的k个数_40 {
     public int[] getLeastNumbers(int[] arr, int k) {
         function(arr, 0, arr.length - 1, k);
         int[] ans = new int[k];
-        for(int i = 0;i<k;i++){
-            ans[i] = arr[i];
-        }
+        System.arraycopy(arr, 0, ans, 0, k);
         return ans;
     }
 
