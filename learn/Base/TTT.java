@@ -1,31 +1,41 @@
 package Base;
 
-public class TTT {
-    public static void main(String[] args) {
-        int[] arr = { 1, 1, 2 };
-        fullSort(arr, 0, arr.length - 1);
+import practice.QuickSort1;
+
+import java.util.HashMap;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class TTT{
+    public static void main(String[] args){
+        int[] a = new int[]{2,4,8,2,9,1};
+        int[] b = TTT.QuickSort(a, 0, a.length - 1);
+        for(int i : b){
+            System.out.println(i);
+        }
     }
 
-    public static void fullSort(int[] arr, int start, int end) {
-        // 递归终止条件
-        if (start == end) {
-            for (int i : arr) {
-                System.out.print(i);
+    public static int[] QuickSort(int[] a, int start, int end){
+        int left = start;
+        int right = end;
+        int t = a[start];
+        while(left < right){
+            while(a[right] > t && left < right){
+                right --;
             }
-            System.out.println();
-            return;
+            while(a[left] < t && left < right){
+                left ++;
+            }
+            if(a[left] == a[right] && left < right){
+                left++;
+            }else {
+                int temp = a[left];
+                a[left] = a[right];
+                a[right] = temp;
+            }
         }
-        for (int i = start; i <= end; i++) {
-            swap(arr, i, start);
-            fullSort(arr, start + 1, end);
-            swap(arr, i, start);
-        }
+        if(left - 1 > start) QuickSort(a, start, left);
+        if(left + 1 < end) QuickSort(a, left + 1, end);
+        return a;
     }
-
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
-
 }
